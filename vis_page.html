@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Qualitative interaction motion results for DIGHT and related demonstrations.">
+  <title>Interaction Motion Results</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f5f6f7;
+      --surface: #ffffff;
+      --text: #202124;
+      --muted: #60656d;
+      --border: #dfe2e6;
+      --accent: #2f5f8f;
+      --radius: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    .page-header,
+    main {
+      width: min(1180px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .page-header {
+      padding: 56px 0 32px;
+      text-align: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .page-subtitle {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    main {
+      padding-bottom: 64px;
+    }
+
+    .results-section {
+      padding: clamp(20px, 4vw, 36px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .results-section + .results-section {
+      margin-top: 24px;
+    }
+
+    .section-header {
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header h2 {
+      margin-bottom: 6px;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      line-height: 1.25;
+    }
+
+    .section-header p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .video-row + .video-row {
+      margin-top: 34px;
+      padding-top: 34px;
+      border-top: 1px solid var(--border);
+    }
+
+    .row-title {
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+      font-weight: 650;
+      text-align: center;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    figure {
+      min-width: 0;
+      margin: 0;
+    }
+
+    figcaption {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+      text-align: center;
+    }
+
+    .method-name {
+      color: var(--accent);
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 1px solid #24272b;
+      border-radius: 6px;
+      background: #000;
+      object-fit: contain;
+    }
+
+    video:focus-visible {
+      outline: 3px solid rgba(47, 95, 143, 0.4);
+      outline-offset: 3px;
+    }
+
+    .single-video {
+      width: min(920px, 100%);
+      margin-inline: auto;
+    }
+
+    .no-script-note {
+      margin: 0 0 20px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .page-header,
+      main {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .page-header {
+        padding: 36px 0 24px;
+      }
+
+      main {
+        padding-bottom: 32px;
+      }
+
+      .results-section {
+        padding: 18px 12px;
+      }
+
+      .results-section + .results-section {
+        margin-top: 14px;
+      }
+
+      .section-header {
+        margin-bottom: 22px;
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .video-row + .video-row {
+        margin-top: 26px;
+        padding-top: 26px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <h1>Interaction Motion Results</h1>
+    <p class="page-subtitle">Qualitative comparisons and interaction demonstrations.</p>
+  </header>
+
+  <main>
+    <noscript>
+      <p class="no-script-note">JavaScript is disabled. All videos remain available through their player controls.</p>
+    </noscript>
+
+    <section class="results-section" aria-labelledby="comparison-title">
+      <header class="section-header">
+        <h2 id="comparison-title">DIGHT vs. InterGen</h2>
+        <p>Side-by-side comparisons across human interaction scenarios.</p>
+      </header>
+
+      <article class="video-row comparison-row" data-video-row data-pair>
+        <h3 class="row-title">The second person puts his right hand around the first person's left arm. Then they walk together.</h3>
+        <div class="comparison-grid">
+          <figure>
+            <figcaption><span class="method-name">DIGHT</span></figcaption>
+            <video controls muted loop playsinline preload="metadata" aria-label="DIGHT hand-in-hand result">
+              <source src="./vis_comp/handbyhand_DIGHT.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+          <figure>
+            <figcaption><span class="method-name">InterGen</span></figcaption>
+            <video controls muted loop playsinline preload="metadata" aria-label="InterGen hand-in-hand result">
+              <source src="./vis_comp/handbyhand_baseline.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+        </div>
+      </article>
+
+      <article class="video-row comparison-row" data-video-row data-pair>
+        <h3 class="row-title">The first one supports themselves with hand on the ground, while the second one grasps the first one's left hand and help themselves up to a standing position.</h3>
+        <div class="comparison-grid">
+          <figure>
+            <figcaption><span class="method-name">DIGHT</span></figcaption>
+            <video controls muted loop playsinline preload="metadata" aria-label="DIGHT helping result">
+              <source src="./vis_comp/help_DIGHT.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+          <figure>
+            <figcaption><span class="method-name">InterGen</span></figcaption>
+            <video controls muted loop playsinline preload="metadata" aria-label="InterGen helping result">
+              <source src="./vis_comp/help_baseline.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+        </div>
+      </article>
+
+      <article class="video-row comparison-row" data-video-row data-pair>
+        <h3 class="row-title">One person approaches another and taps his right shoulder using the left hand.</h3>
+        <div class="comparison-grid">
+          <figure>
+            <figcaption><span class="method-name">DIGHT</span></figcaption>
+            <video controls muted loop playsinline preload="metadata" aria-label="DIGHT patting result">
+              <source src="./vis_comp/pat_DIGHT.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+          <figure>
+            <figcaption><span class="method-name">InterGen</span></figcaption>
+            <video controls muted loop playsinline preload="metadata" aria-label="InterGen patting result">
+              <source src="./vis_comp/pat_baseline.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+        </div>
+      </article>
+
+      <article class="video-row comparison-row" data-video-row data-pair>
+        <h3 class="row-title">One person walks to the front of the other and extends his left hand. The other person takes a step forward and extends his left hand to shake hands.</h3>
+        <div class="comparison-grid">
+          <figure>
+            <figcaption><span class="method-name">DIGHT</span></figcaption>
+            <video controls muted loop playsinline preload="metadata" aria-label="DIGHT handshake result">
+              <source src="./vis_comp/shake_hand_DIGHT.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+          <figure>
+            <figcaption><span class="method-name">InterGen</span></figcaption>
+            <video controls muted loop playsinline preload="metadata" aria-label="InterGen handshake result">
+              <source src="./vis_comp/shake_hand_baseline.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+        </div>
+      </article>
+
+      <article class="video-row comparison-row" data-video-row data-pair>
+        <h3 class="row-title">Both the two synchronize their kick heights during the training.</h3>
+        <div class="comparison-grid">
+          <figure>
+            <figcaption><span class="method-name">DIGHT</span></figcaption>
+            <video controls muted loop playsinline preload="metadata" aria-label="DIGHT handshake result">
+              <source src="./vis_comp/kick_DIGHT.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+          <figure>
+            <figcaption><span class="method-name">InterGen</span></figcaption>
+            <video controls muted loop playsinline preload="metadata" aria-label="InterGen handshake result">
+              <source src="./vis_comp/kick_baseline.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section class="results-section" aria-labelledby="multi-humanoid-title">
+      <header class="section-header">
+        <h2 id="multi-humanoid-title">Multi-humanoid</h2>
+        <p>Interactions involving multiple humanoid characters.</p>
+      </header>
+
+      <article class="video-row" data-video-row>
+        <h3 class="row-title">Three Humanoids: In an intense boxing match, two people are continuously punching while the other is defending and counterattacking.</h3>
+        <figure class="single-video">
+          <video controls muted loop playsinline preload="metadata" aria-label="Three humanoids boxing result">
+            <source src="./n_humanoid/3_human_box.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </figure>
+      </article>
+
+      <article class="video-row" data-video-row>
+        <h3 class="row-title">Four Humanoids: Four people stand in a circle and play a game of rock-paper-scissors together.</h3>
+        <figure class="single-video">
+          <video controls muted loop playsinline preload="metadata" aria-label="Four humanoids interaction result">
+            <source src="./n_humanoid/4_human.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </figure>
+      </article>
+    </section>
+
+    <section class="results-section" aria-labelledby="long-horizon-title">
+      <header class="section-header">
+        <h2 id="long-horizon-title">Long-horizon</h2>
+        <p>Longer interaction sequences composed of multiple instructions.</p>
+      </header>
+
+      <article class="video-row" data-video-row>
+        <h3 class="row-title">Bow → Boxing → Kick → Bow</h3>
+        <figure class="single-video">
+          <video controls muted loop playsinline preload="metadata" aria-label="Bow, box, kick, and bow sequence">
+            <source src="./long_motion/bow_box_kick_box.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </figure>
+      </article>
+
+      <article class="video-row" data-video-row>
+        <h3 class="row-title">Approach each other → Argue → Push and shove each other</h3>
+        <figure class="single-video">
+          <video controls muted loop playsinline preload="metadata" aria-label="Walk forward, argue, and fight sequence">
+            <source src="./long_motion/walkforward_argue_fight.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </figure>
+      </article>
+    </section>
+
+    <section class="results-section" aria-labelledby="high-dynamic-title">
+      <header class="section-header">
+        <h2 id="high-dynamic-title">High-dynamic</h2>
+        <p>Fast, high-energy interaction motion.</p>
+      </header>
+
+      <article class="video-row" data-video-row>
+        <h3 class="row-title">Kick</h3>
+        <figure class="single-video">
+          <video controls muted loop playsinline preload="metadata" aria-label="High-dynamic kick result">
+            <source src="./high_dynamic/kick.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </figure>
+      </article>
+    </section>
+
+    <section class="results-section" aria-labelledby="boxing-title">
+      <header class="section-header">
+        <h2 id="boxing-title">Continuous-contact Boxing</h2>
+        <p>A sustained close-contact boxing interaction.</p>
+      </header>
+
+      <article class="video-row" data-video-row>
+        <h3 class="row-title">Boxing</h3>
+        <figure class="single-video">
+          <video controls muted loop playsinline preload="metadata" aria-label="Continuous-contact boxing result">
+            <source src="./high_dynamic/boxing.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </figure>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const rows = [...document.querySelectorAll("[data-video-row]")];
+      const videos = [...document.querySelectorAll("video")];
+      const visibleRows = new Set();
+      const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      let autoplayEnabled = !motionPreference.matches && !(connection && connection.saveData);
+
+      const safePlay = (video) => {
+        const playRequest = video.play();
+        if (playRequest) {
+          playRequest.catch(() => {});
+        }
+      };
+
+      const playRow = (row) => {
+        if (!autoplayEnabled || document.hidden) return;
+        row.querySelectorAll("video").forEach(safePlay);
+      };
+
+      const pauseRow = (row) => {
+        row.querySelectorAll("video").forEach((video) => video.pause());
+      };
+
+      document.querySelectorAll("[data-pair]").forEach((row) => {
+        const [first, second] = row.querySelectorAll("video");
+        if (!first || !second) return;
+
+        let syncing = false;
+        const runSynchronized = (callback) => {
+          if (syncing) return;
+          syncing = true;
+          try {
+            callback();
+          } finally {
+            window.requestAnimationFrame(() => {
+              syncing = false;
+            });
+          }
+        };
+
+        const bindPair = (source, target) => {
+          source.addEventListener("play", () => {
+            runSynchronized(() => {
+              if (Math.abs(source.currentTime - target.currentTime) > 0.12) {
+                target.currentTime = source.currentTime;
+              }
+              if (target.paused) safePlay(target);
+            });
+          });
+
+          source.addEventListener("pause", () => {
+            runSynchronized(() => {
+              if (!target.paused) target.pause();
+            });
+          });
+
+          source.addEventListener("seeking", () => {
+            runSynchronized(() => {
+              if (Math.abs(source.currentTime - target.currentTime) > 0.04) {
+                target.currentTime = source.currentTime;
+              }
+            });
+          });
+
+          source.addEventListener("timeupdate", () => {
+            runSynchronized(() => {
+              if (!source.paused && Math.abs(source.currentTime - target.currentTime) > 0.15) {
+                target.currentTime = source.currentTime;
+              }
+            });
+          });
+
+          source.addEventListener("ratechange", () => {
+            runSynchronized(() => {
+              if (target.playbackRate !== source.playbackRate) {
+                target.playbackRate = source.playbackRate;
+              }
+            });
+          });
+        };
+
+        bindPair(first, second);
+        bindPair(second, first);
+      });
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              visibleRows.add(entry.target);
+              playRow(entry.target);
+            } else {
+              visibleRows.delete(entry.target);
+              pauseRow(entry.target);
+            }
+          });
+        }, {
+          rootMargin: "80px 0px",
+          threshold: 0.05
+        });
+
+        rows.forEach((row) => observer.observe(row));
+      }
+
+      const updateAutoplayPreference = () => {
+        autoplayEnabled = !motionPreference.matches && !(connection && connection.saveData);
+        if (!autoplayEnabled) {
+          videos.forEach((video) => video.pause());
+        } else {
+          visibleRows.forEach(playRow);
+        }
+      };
+
+      if (motionPreference.addEventListener) {
+        motionPreference.addEventListener("change", updateAutoplayPreference);
+      } else if (motionPreference.addListener) {
+        motionPreference.addListener(updateAutoplayPreference);
+      }
+
+      if (connection && connection.addEventListener) {
+        connection.addEventListener("change", updateAutoplayPreference);
+      }
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          videos.forEach((video) => video.pause());
+        } else {
+          visibleRows.forEach(playRow);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
